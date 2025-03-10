@@ -229,7 +229,7 @@ spec:
     ingress:
       enabled: true
       ingressClassName: internal
-      hosts: ["grafana.devbu.io"]
+      hosts: ["grafana.vaderrp.com"]
     persistence:
       enabled: false
     testFramework:

@@ -9,7 +9,7 @@ metadata:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: devbu-io-tls
+  name: vaderrp-com-tls
   namespace: cert-manager
   annotations:
     cert-manager.io/alt-names: '*.vaderrp.com,vaderrp.com'
@@ -24,8 +24,8 @@ metadata:
     controller.cert-manager.io/fao: "true"
 type: kubernetes.io/tls
 data:
-  tls.crt: op://kubernetes/devbu-io-tls/tls.crt
-  tls.key: op://kubernetes/devbu-io-tls/tls.key
+  tls.crt: op://kubernetes/vaderrp-com-tls/tls.crt
+  tls.key: op://kubernetes/vaderrp-com-tls/tls.key
 ---
 apiVersion: v1
 kind: Secret
