@@ -22,8 +22,7 @@ cniConfig:
 nodes:
   - hostname: "homeops"
     ipAddress: "192.168.7.200"
-    installDiskSelector:
-      serial: "sda"
+    installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
