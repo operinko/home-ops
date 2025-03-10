@@ -27,15 +27,6 @@
       "group": {
         "commitMessageTopic": "{{{groupName}}} group"
       }
-    },
-    {
-      "description": ["Rook-Ceph Group"],
-      "groupName": "Rook-Ceph",
-      "matchDatasources": ["helm"],
-      "matchPackageNames": ["/rook.ceph/"],
-      "group": {
-        "commitMessageTopic": "{{{groupName}}} group"
-      }
     }
   ]
 }
