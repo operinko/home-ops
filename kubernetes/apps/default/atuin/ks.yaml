@@ -11,9 +11,6 @@ spec:
       app.kubernetes.io/name: *app
   components:
     - ../../../../components/gatus/guarded
-  dependsOn:
-    - name: nfs-csi
-      namespace: nfs-csi
   interval: 1h
   path: ./kubernetes/apps/default/atuin/app
   postBuild:
