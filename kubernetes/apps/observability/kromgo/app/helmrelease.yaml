@@ -72,7 +72,7 @@ spec:
             port: *healthPort
     ingress:
       app:
-        className: external
+        className: internal
         hosts:
           - host: "{{ .Release.Name }}.vaderrp.com"
             paths:
