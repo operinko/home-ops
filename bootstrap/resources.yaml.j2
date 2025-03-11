@@ -30,14 +30,6 @@ data:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: onepassword-secret
-  namespace: external-secrets
-stringData:
-  token: op://kubernetes/1password/OP_CONNECT_TOKEN
----
-apiVersion: v1
-kind: Secret
-metadata:
   name: sops-age
   namespace: flux-system
 stringData:
