@@ -80,4 +80,4 @@ spec:
       config:
         accessMode: ReadWriteOnce
         size: 10Gi
-        volumeName: atuin
+        volumeName: atuin-config
