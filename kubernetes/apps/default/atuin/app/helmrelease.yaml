@@ -79,3 +79,9 @@ spec:
     persistence:
       config:
         existingClaim: atuin
+    singleBinary:
+      replicas: 1
+      persistence:
+        enabled: true
+        storageClass: nfs-csi
+        size: 20Gi
