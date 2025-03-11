@@ -10,3 +10,6 @@ Thumbs.db
 kubeconfig
 onepassword.env
 talosconfig
+cloudflare-tunnel.json
+github-deploy.key
+github-deploy.key.pub
