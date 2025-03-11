@@ -56,6 +56,16 @@ spec:
             - name: http
               containerPort: 8087
               protocol: TCP
+          ingress:
+            app:
+              className: external
+              hosts:
+                - host: bw.vaderrp.com
+                  paths:
+                    - path: /
+                      service:
+                        identifier: app
+                        port: http
           readinessProbe:
             tcpSocket:
               port: 8087
