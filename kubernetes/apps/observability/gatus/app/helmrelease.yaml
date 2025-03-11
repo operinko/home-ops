@@ -94,8 +94,10 @@ spec:
     ingress:
       app:
         className: external
+        annotations:
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
         hosts:
-          - host: status.vaderrp.com
+          - host: gatus.vaderrp.com
             paths:
               - path: /
                 service:
