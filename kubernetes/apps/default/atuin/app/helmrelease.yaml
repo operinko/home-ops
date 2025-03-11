@@ -76,3 +76,8 @@ spec:
                 service:
                   identifier: app
                   port: http
+    persistence:
+      config:
+        accessMode: ReadWriteOnce
+        size: 10Gi
+        volumeName: atuin
