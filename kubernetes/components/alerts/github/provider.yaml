@@ -1,0 +1,11 @@
+---
+# yaml-language-server: $schema=https://crd.movishell.pl/notification.toolkit.fluxcd.io/provider_v1beta3.json
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: github
+spec:
+  type: github
+  address: https://github.com/operinko/home-ops
+  secretRef:
+    name: flux-github-token
