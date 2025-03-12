@@ -23,9 +23,6 @@ spec:
     name: cloudnative-pg-secret
   monitoring:
     enablePodMonitor: true
-  bootstrap:
-    recovery:
-      source: &previousCluster postgres-v1
   resources:
     requests:
       cpu: 200m
