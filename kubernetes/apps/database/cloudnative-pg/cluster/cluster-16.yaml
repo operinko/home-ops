@@ -11,8 +11,14 @@ spec:
   primaryUpdateStrategy: unsupervised
   primaryUpdateMethod: switchover
   storage:
-    size: 20Gi
+    pvcTemplate:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 20Gi
     storageClass: nfs-csi
+    size: 20Gi
   postgresql:
     shared_preload_libraries: ["vectors.so"]
     parameters:
