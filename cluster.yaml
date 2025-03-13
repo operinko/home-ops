@@ -5,7 +5,7 @@ node_cidr: "192.168.7.0/24"
 
 # -- DNS servers to use for the cluster.
 #    (OPTIONAL) / (DEFAULT: ["1.1.1.1", "1.0.0.1"]) / (Cloudflare DNS)
-node_dns_servers: ["192.168.5.3", "192.168.5.5"]
+#node_dns_servers: ["192.168.5.3", "192.168.5.5"]
 
 # -- NTP servers to use for the cluster.
 #    (OPTIONAL) / (DEFAULT: ["162.159.200.1", "162.159.200.123"]) / (Cloudflare NTP)
@@ -17,7 +17,7 @@ node_default_gateway: "192.168.7.1"
 
 # -- Attach a vlan tag to the Talos nodes. Not needed if ports on your switch are tagged.
 #    (OPTIONAL) / (REF: https://www.talos.dev/latest/advanced/advanced-networking/#vlans)
-node_vlan_tag: "7"
+#node_vlan_tag: "7"
 
 # -- The IP address of the Kube API.
 #    (REQUIRED) / (NOTE: Choose an unused IP in node_cidr)
@@ -73,7 +73,7 @@ cloudflare_ingress_addr: "192.168.7.5"
 
 # -- The IP address of the BGP router, to keep things simple, node network will be used for BGP peering.
 # (OPTIONAL) / (e.g. "192.168.1.1") / (REF: https://docs.cilium.io/en/latest/network/bgp-control-plane/bgp-control-plane/)
-cilium_bgp_router_addr: "192.168.0.1"
+#cilium_bgp_router_addr: "192.168.0.1"
 
 # -- The BGP router ASN
 # (OPTIONAL) / (e.g. "64513")

@@ -1,4 +1,4 @@
-kubernetes-homeops.yaml
+kubernetes-talos1.yaml
+kubernetes-talos2.yaml
+kubernetes-talos3.yaml
 talosconfig
-kubernetes-homeops2.yaml
-kubernetes-homeops3.yaml

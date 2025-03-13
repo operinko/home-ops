@@ -20,7 +20,7 @@ cniConfig:
 
 nodes:
   - hostname: "talos1"
-    ipAddress: "192.168.7.200"
+    ipAddress: "192.168.7.118"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
@@ -28,17 +28,16 @@ nodes:
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "00:16:3e:59:43:78"
-        vlans:
-          - vlanId: 7
-            addresses:
-              - "192.168.7.200/24"
-            mtu: 1500
-            routes:
-              - network: "0.0.0.0/0"
-                gateway: "192.168.7.1"
-            vip:
-              ip: "192.168.7.2"
+          hardwareAddr: "00:16:3e:ba:1d:ee"
+        dhcp: false
+        addresses:
+          - "192.168.7.118/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
   - hostname: "talos2"
     ipAddress: "192.168.7.182"
     installDisk: "/dev/sda"
@@ -49,16 +48,15 @@ nodes:
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "bc:24:11:f1:40:59"
-        vlans:
-          - vlanId: 7
-            addresses:
-              - "192.168.7.182/24"
-            mtu: 1500
-            routes:
-              - network: "0.0.0.0/0"
-                gateway: "192.168.7.1"
-            vip:
-              ip: "192.168.7.2"
+        dhcp: false
+        addresses:
+          - "192.168.7.182/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
   - hostname: "talos3"
     ipAddress: "192.168.7.192"
     installDisk: "/dev/sda"
@@ -69,16 +67,15 @@ nodes:
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "bc:24:11:bc:06:59"
-        vlans:
-          - vlanId: 7
-            addresses:
-              - "192.168.7.192/24"
-            mtu: 1500
-            routes:
-              - network: "0.0.0.0/0"
-                gateway: "192.168.7.1"
-            vip:
-              ip: "192.168.7.2"
+        dhcp: false
+        addresses:
+          - "192.168.7.192/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
 
 # Global patches
 patches:
