@@ -6,8 +6,10 @@ resources:
   - ./actions-runner-controller.yaml
   - ./backube.yaml
   - ./cilium.yaml
+  - ./cloudnative-pg.yaml
   - ./csi-driver-nfs.yaml
   - ./descheduler.yaml
+  - ./dragonfly.yaml
   - ./emqx.yaml
   - ./external-dns.yaml
   - ./grafana.yaml
@@ -15,6 +17,7 @@ resources:
   - ./intel.yaml
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
+  - ./kyverno.yaml
   - ./metrics-server.yaml
   - ./openebs.yaml
   - ./piraeus.yaml
