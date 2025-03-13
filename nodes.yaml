@@ -1,0 +1,29 @@
+---
+nodes:
+  - name: "talos1"
+    address: "192.168.7.200"
+    mac_addr: "00:16:3e:59:43:78"
+    controller: true
+    disk: "/dev/sda"
+    schematic_id: "2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8"
+  - name: "talos2"
+    address: "192.168.7.182"
+    mac_addr: "bc:24:11:f1:40:59"
+    controller: true
+    disk: "/dev/sda"
+    schematic_id: "4b3cd373a192c8469e859b7a0cfbed3ecc3577c4a2d346a37b0aeff9cd17cdb0"
+  - name: "talos3"
+    address: "192.168.7.192"
+    mac_addr: "bc:24:11:bc:06:59"
+    controller: true
+    disk: "/dev/sda"
+    schematic_id: "4b3cd373a192c8469e859b7a0cfbed3ecc3577c4a2d346a37b0aeff9cd17cdb0"  # - name: ""            # (REQUIRED) Name of the node (must match [a-z0-9-\]+)
+  #   address: ""         # (REQUIRED) IP address of the node (must be in the node_cidr)
+  #   controller: true    # (REQUIRED) Set to true if this is a controller node
+  #   disk: ""            # (REQUIRED) Device path or serial number of the disk for this node (talosctl get disks -n <ip> --insecure)
+  #   mac_addr: ""        # (REQUIRED) MAC address of the NIC for this node (talosctl get links -n <ip> --insecure)
+  #   schematic_id: ""    # (REQUIRED) Schematic ID from https://factory.talos.dev/
+  #   mtu: 1500           # (ADVANCED/OPTIONAL) MTU for the NIC. DEFAULT: 1500
+  #   secureboot: false   # (ADVANCED/OPTIONAL) SecureBoot mode on UEFI platforms. Ref: https://www.talos.dev/latest/talos-guides/install/bare-metal-platforms/secureboot
+  #   encrypt_disk: false # (ADVANCED/OPTIONAL) TPM-based disk encryption. Ref: https://www.talos.dev/latest/talos-guides/install/bare-metal-platforms/secureboot
+  # ...

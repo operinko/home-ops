@@ -12,6 +12,7 @@ instance:
     - notification-controller
   sync:
     kind: GitRepository
-    url: "https://github.com/operinko/home-ops.git"
+    url: "ssh://git@github.com/operinko/home-ops.git"
+    pullSecret: github-deploy-key
     ref: "refs/heads/main"
     path: kubernetes/flux/cluster
