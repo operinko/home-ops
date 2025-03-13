@@ -2,7 +2,8 @@
 ---
 clusterName: kubernetes
 
-talosVersion: "${talosVersion}"
+#talosVersion: "${talosVersion}"
+talosVersion: "v1.9.5"
 kubernetesVersion: "${kubernetesVersion}"
 
 endpoint: https://192.168.7.2:6443
@@ -20,13 +21,44 @@ cniConfig:
   name: none
 
 nodes:
+  - hostname: "homeops3"
+    ipAddress: "192.168.7.182"
+    installDisk: "/dev/sda"
+    machineSpec:
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/95d432d6bb450a67e801a6ae77c96a67e38820b62ba4159ae7e997e1695207f7
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "BC:24:11:BC:06:59"
+        dhcp: false
+        addresses:
+          - "192.168.7.182/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
   - hostname: "homeops2"
     ipAddress: "192.168.7.192"
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/95d432d6bb450a67e801a6ae77c96a67e38820b62ba4159ae7e997e1695207f7
-    controlPlane: false
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "BC:24:11:F1:40:59"
+        dhcp: false
+        addresses:
+          - "192.168.7.192/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
   - hostname: "homeops"
     ipAddress: "192.168.7.200"
     installDisk: "/dev/sda"
