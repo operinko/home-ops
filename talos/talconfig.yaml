@@ -2,8 +2,7 @@
 ---
 clusterName: kubernetes
 
-#talosVersion: "${talosVersion}"
-talosVersion: "v1.9.5"
+talosVersion: "${talosVersion}"
 kubernetesVersion: "${kubernetesVersion}"
 
 endpoint: https://192.168.7.2:6443
@@ -28,6 +27,9 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/95d432d6bb450a67e801a6ae77c96a67e38820b62ba4159ae7e997e1695207f7
     controlPlane: true
+    nameservers:
+      - "192.168.5.3"
+      - "192.168.5.5"
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "BC:24:11:BC:06:59"
@@ -47,6 +49,9 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/95d432d6bb450a67e801a6ae77c96a67e38820b62ba4159ae7e997e1695207f7
     controlPlane: true
+    nameservers:
+      - "192.168.5.3"
+      - "192.168.5.5"
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "BC:24:11:F1:40:59"
@@ -66,6 +71,9 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
     controlPlane: true
+    nameservers:
+      - "192.168.5.3"
+      - "192.168.5.5"
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "00:16:3e:59:43:78"
