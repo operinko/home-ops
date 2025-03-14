@@ -2,10 +2,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: mayastor-app
-  namespace: storage
+  name: &app mayastor-app
+  namespace: &namespace storage
 spec:
-  targetNamespace: storage
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  targetNamespace: *namespace
   interval: 10m
   path: "./kubernetes/apps/storage/mayastor/app"
   prune: true
@@ -17,10 +20,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: mayastor-config
-  namespace: storage
+  name: &app mayastor-config
+  namespace: &namespace storage
 spec:
-  targetNamespace: storage
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  targetNamespace: *namespace
   interval: 10m
   path: "./kubernetes/apps/storage/mayastor/config"
   prune: true
