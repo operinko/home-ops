@@ -1,8 +1,9 @@
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta2
+# yaml-language-server: $schema=https://crd.movishell.pl/source.toolkit.fluxcd.io/helmrepository_v1.json
+apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: mayastor
+  name: openebs-mayastor
   namespace: flux-system
 spec:
   interval: 1m0s
