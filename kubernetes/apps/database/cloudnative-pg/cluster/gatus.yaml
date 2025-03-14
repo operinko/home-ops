@@ -8,9 +8,9 @@ metadata:
 data:
   config.yaml: |
     endpoints:
-      - name: Postgres
-        group: Services
-        url: tcp://postgres-16-rw.database.svc.cluster.local:5432
+      - name: postgres
+        group: infrastructure
+        url: tcp://postgres-rw.database.svc.cluster.local:5432
         interval: 1m
         ui:
           hide-url: true
@@ -19,4 +19,3 @@ data:
           - "[CONNECTED] == true"
         alerts:
           - type: pushover
-            send-on-resolved: true
