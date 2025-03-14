@@ -9,7 +9,7 @@ data:
   config.yaml: |
     endpoints:
       - name: postgres
-        group: infrastructure
+        group: Services
         url: tcp://postgres-rw.database.svc.cluster.local:5432
         interval: 1m
         ui:
@@ -17,5 +17,3 @@ data:
           hide-hostname: true
         conditions:
           - "[CONNECTED] == true"
-        alerts:
-          - type: pushover
