@@ -59,4 +59,4 @@ spec:
               - path: /
                 service:
                   identifier: app
-                  port: http
+                  port: 9000
