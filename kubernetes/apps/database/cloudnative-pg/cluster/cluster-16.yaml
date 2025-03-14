@@ -9,7 +9,8 @@ spec:
   imageName: ghcr.io/tensorchord/cloudnative-pgvecto.rs:16.3-v0.2.1
 #  enableSuperuserAccess: true
   primaryUpdateStrategy: unsupervised
-  primaryUpdateMethod: switchover
+  primaryUpdateMethod: restart
+  mode: standalone
   storage:
     pvcTemplate:
       accessModes:
@@ -17,7 +18,7 @@ spec:
       resources:
         requests:
           storage: 20Gi
-    storageClass: nfs-csi
+      storageClassName: nfs-csi
     size: 20Gi
   postgresql:
     shared_preload_libraries: ["vectors.so"]
