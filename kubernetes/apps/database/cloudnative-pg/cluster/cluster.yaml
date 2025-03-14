@@ -21,8 +21,5 @@ spec:
   resources:
     requests:
       cpu: 50m
-    limits:
-      hugepages-2Mi: 2Gi # Requires sysctl set on the host
-      memory: 2Gi
   monitoring:
     enablePodMonitor: true
