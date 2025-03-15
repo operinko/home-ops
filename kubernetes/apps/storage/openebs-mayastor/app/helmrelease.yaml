@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: openebs-mayastor
         namespace: flux-system
-      version: 2.6.0
+      version: 2.8.0
   interval: 1m0s
   values:
     engine:
