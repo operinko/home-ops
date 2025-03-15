@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: mayastor-service-account
+  name: openebs-mayastor-service-account
   namespace: storage
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: mayastor-cluster-role
+  name: openebs-mayastor-cluster-role
 rules:
 - apiGroups: ["apiextensions.k8s.io"]
   resources: ["customresourcedefinitions"]
@@ -69,12 +69,12 @@ rules:
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: mayastor-cluster-role-binding
+  name: openebs-mayastor-cluster-role-binding
 subjects:
 - kind: ServiceAccount
-  name: mayastor-service-account
+  name: openebs-mayastor-service-account
   namespace: storage
 roleRef:
   kind: ClusterRole
-  name: mayastor-cluster-role
+  name: openebs-mayastor-cluster-role
   apiGroup: rbac.authorization.k8s.io
