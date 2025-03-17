@@ -124,7 +124,7 @@ spec:
         name: *app
         globalMounts:
           - subPath: services.yaml
-            path: /app/config/services.yaml
+            path: /app/config/services2.yaml
             readOnly: true
       configmap:
         type: configMap
@@ -132,6 +132,9 @@ spec:
         globalMounts:
           - subPath: bookmarks.yaml
             path: /app/config/bookmarks.yaml
+            readOnly: true
+          - subPath: services.yaml
+            path: /app/config/services.yaml
             readOnly: true
           #- subPath: docker.yaml
           #  path: /app/config/docker.yaml
