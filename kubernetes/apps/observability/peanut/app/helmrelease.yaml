@@ -40,19 +40,14 @@ spec:
           containers:
             main:
               env:
-                - name: "NUT_HOST"
-                  value: "192.168.0.177"
-                - name: "NUT_PORT"
-                  value: 3493
-                - name: "USERNAME"
-                  value: "upsmon"
-                - name: "WEB_PORT"
-                  value: 80
-                - name: "PASSWORD"
-                  valueFrom:
-                    secretKeyRef:
-                      name: peanut-secret
-                      key: password
+                NUT_HOST: "192.168.0.177"
+                NUT_PORT: 3493
+                USERNAME: "upsmon"
+                WEB_PORT: 80
+                PASSWORD:
+                  secretKeyRef:
+                    name: peanut-secret
+                    key: password
     ingress:
       app:
         className: internal
