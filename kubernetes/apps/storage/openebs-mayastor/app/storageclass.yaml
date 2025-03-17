@@ -3,6 +3,7 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: openebs-mayastor-dual-replica
+  namespace: storage
 parameters:
   protocol: nvmf
   repl: "2"
