@@ -5,7 +5,7 @@
         description: Proxmox Virtual Environment
         widget:
           type: proxmox
-          url: https://proxmox.${SECRET_DOMAIN}:8006
+          url: https://proxmox.${SECRET_DOMAIN}
           username: {{ PROXMOX_API_TOKEN_ID }}
           password: {{ PROXMOX_API_TOKEN_SECRET }}
 - Observability:
