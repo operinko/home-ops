@@ -24,7 +24,7 @@ spec:
       strategy: rollback
       retries: 3
   dependsOn:
-    - name: openebs-hostpath
+    - name: openebs-mayastor
       namespace: storage
   values:
     podAnnotations:
@@ -68,7 +68,7 @@ spec:
       accessModes:
         - ReadWriteOnce
       size: 100Mi
-      storageClassName: openebs-hostpath
+      storageClassName: openebs-mayastor
     volumeMounts:
       - mountPath: /build/plugins
         name: headlamp-plugins
