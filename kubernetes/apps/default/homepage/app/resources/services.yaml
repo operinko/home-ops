@@ -6,8 +6,8 @@
         widget:
           type: proxmox
           url: https://proxmox.${SECRET_DOMAIN}:8006
-          username: {{ .PROXMOX_API_TOKEN_ID }}
-          password: {{ .PROXMOX_API_TOKEN_SECRET }}
+          username: {{ PROXMOX_API_TOKEN_ID }}
+          password: {{ PROXMOX_API_TOKEN_SECRET }}
 - Observability:
     - Cloudflared:
         href: https://dash.cloudflare.com/
@@ -15,9 +15,9 @@
         description: Cloudflared Tunnel Status
         widget:
           type: cloudflared
-          accountid: {{ .CF_ACCOUNT_ID }}
-          tunnelid: {{ .CF_TUNNEL_ID }}
-          key: {{ .CF_API_TOKEN }}
+          accountid: {{ CF_ACCOUNT_ID }}
+          tunnelid: {{ CF_TUNNEL_ID }}
+          key: {{ CF_API_TOKEN }}
 - Calendar:
     - Agenda:
         widget:
