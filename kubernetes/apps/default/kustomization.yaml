@@ -9,3 +9,5 @@ components:
 resources:
   - ./echo/ks.yaml
   - ./atuin/ks.yaml
+  - ./homepage/ks.yaml
+  - ./theme-park/ks.yaml
