@@ -31,6 +31,3 @@
             - type: radarr
               service_group: Downloads
               service_name: Radarr
-            - type: readarr
-              service_group: Downloads
-              service_name: Readarr
