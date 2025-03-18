@@ -46,8 +46,8 @@ spec:
     podAnnotations:
       reloader.stakater.com/auto: "true"
     volumeMounts:
-      - mountPath: /build/plugins
-        name: headlamp-plugins
+      - name: headlamp-plugins
+        mountPath: "/home/headlamp/.config/Headlamp/plugins/"
       - name: headlamp-kubeconfig
         mountPath: "/home/headlamp/.config/Headlamp/kubeconfigs/"
     volumes:
