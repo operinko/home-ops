@@ -54,9 +54,10 @@ spec:
       - name: headlamp-plugins
         persistentVolumeClaim:
           claimName: headlamp
-      - name: headlamp-kubeconfig
-        persistentVolumeClaim:
-          claimName: headlamp
+      - name: "headlamp-kubeconfig"
+        secret:
+          secretName: "kubeconfig"
+          mountPath: "/home/headlamp/.config/Headlamp/kubeconfigs/"
     persistentVolumeClaim:
       enabled: true
       accessModes:
