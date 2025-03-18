@@ -58,9 +58,7 @@ spec:
     ingress:
       app:
         enabled: true
-        className: external
-        annotations:
-          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+        className: internal
         hosts:
           - host: capacitor.${SECRET_DOMAIN}
             paths:
