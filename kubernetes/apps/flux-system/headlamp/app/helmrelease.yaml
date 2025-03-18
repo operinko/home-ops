@@ -3,18 +3,24 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: &app headlamp
+  name: headlamp
 spec:
   interval: 30m
   chart:
     spec:
-      chart: *app
-      version: 0.28.1
-      interval: 30m
+      chart: headlamp
+      version: 0.29.1
       sourceRef:
         kind: HelmRepository
-        name: *app
+        name: headlamp
         namespace: flux-system
+  driftDetection:
+    mode: enabled
+    ignore:
+      - paths: [""]
+        target:
+          kind: ClusterRoleBinding
+          name: headlamp-admin
   install:
     remediation:
       retries: 3
@@ -23,12 +29,7 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  dependsOn:
-    - name: nfs-csi
-      namespace: storage
   values:
-    podAnnotations:
-      reloader.stakater.com/auto: "true"
     fullnameOverride: headlamp
     initContainers:
       - image: ghcr.io/headlamp-k8s/headlamp-plugin-flux:v0.1.0-beta-2@sha256:c63dc4e10d7ddb95c966194b5e6fbe2012feb7f932bafa24692daed3cf6c248a
@@ -41,34 +42,9 @@ spec:
           - mountPath: /build/plugins
             name: headlamp-plugins
     config:
-      oidc:
-        secret:
-          create: false
-        externalSecret:
-          enabled: true
-          name: headlamp
       pluginsDir: /build/plugins
-    ingress:
-      enabled: true
-      ingressClassName: internal
-      annotations:
-        gethomepage.dev/enabled: "true"
-        gethomepage.dev/description: Cluster Dashboard
-        gethomepage.dev/group: observe
-        gethomepage.dev/icon: sh-target
-        gethomepage.dev/name: headlamp
-        gethomepage.dev/app: *app
-      hosts:
-        - host: headlamp.${SECRET_DOMAIN}
-          paths:
-            - path: /
-              type: Prefix
-    persistentVolumeClaim:
-      enabled: true
-      accessModes:
-        - ReadWriteOnce
-      size: 100Mi
-      storageClassName: nfs-csi
+    podAnnotations:
+      reloader.stakater.com/auto: "true"
     volumeMounts:
       - mountPath: /build/plugins
         name: headlamp-plugins
@@ -76,18 +52,22 @@ spec:
       - name: headlamp-plugins
         persistentVolumeClaim:
           claimName: headlamp
-  postRenderers:
-    - kustomize:
-        patches:
-          - target:
-              group: rbac.authorization.k8s.io
-              version: v1
-              kind: ClusterRoleBinding
-              name: headlamp-admin
-            patch: |
-              - op: add
-                path: /subjects/-
-                value:
-                  kind: Group
-                  name: Admins
-                  apiGroup: rbac.authorization.k8s.io
+    persistentVolumeClaim:
+      enabled: true
+      accessModes:
+        - ReadWriteOnce
+      size: 2Gi
+      storageClassName: nfs-csi
+    ingress:
+      enabled: true
+      ingressClassName: internal
+      hosts:
+        - host: headlamp.${SECRET_DOMAIN}
+          paths:
+            - path: /
+              type: Prefix
+              backend:
+                service:
+                  name: headlamp
+                  port:
+                    number: 80
