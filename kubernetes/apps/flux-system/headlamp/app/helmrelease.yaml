@@ -66,7 +66,9 @@ spec:
       storageClassName: nfs-csi
     ingress:
       enabled: true
-      ingressClassName: internal
+      ingressClassName: external
+      annotations:
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
       hosts:
         - host: headlamp.${SECRET_DOMAIN}
           paths:
