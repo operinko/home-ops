@@ -48,10 +48,15 @@ spec:
     volumeMounts:
       - mountPath: /build/plugins
         name: headlamp-plugins
+      - name: headlamp-kubeconfig
+        mountPath: "/home/headlamp/.config/Headlamp/kubeconfigs/"
     volumes:
       - name: headlamp-plugins
         persistentVolumeClaim:
           claimName: headlamp
+      - name: headlamp-kubeconfig
+        persistentVolumeClaim:
+          claimName: headlamp-kubeconfig
     persistentVolumeClaim:
       enabled: true
       accessModes:
