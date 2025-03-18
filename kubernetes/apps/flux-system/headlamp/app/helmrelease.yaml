@@ -56,7 +56,7 @@ spec:
           claimName: headlamp
       - name: headlamp-kubeconfig
         persistentVolumeClaim:
-          claimName: headlamp-kubeconfig
+          claimName: headlamp
     persistentVolumeClaim:
       enabled: true
       accessModes:
