@@ -24,5 +24,6 @@ resources:
   - ./metrics-server.yaml
   - ./openebs.yaml
   - ./piraeus.yaml
+  - ./rook-ceph.yaml
   - ./wiremind.yaml
   - ./headlamp.yaml
