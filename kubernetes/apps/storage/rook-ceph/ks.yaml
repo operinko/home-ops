@@ -41,3 +41,4 @@ spec:
   dependsOn:
     - name: rook-ceph
     - name: snapshot-controller
+      namespace: flux-system
