@@ -21,12 +21,13 @@ spec:
     ingress:
       dashboard:
         ingressClassName: "internal"
-        host:
-          name: &host rook-main.${SECRET_DOMAIN}
-          path: "/"
-        tls:
-          - hosts:
-              - *host
+        hosts:
+          - host: rook-main.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                service:
+                  identifier: dashboard
+                  port: http
     toolbox:
       enabled: false
     configOverride: |
