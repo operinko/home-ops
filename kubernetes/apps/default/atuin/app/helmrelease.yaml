@@ -81,6 +81,6 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: ceph-block
+        storageClass: nfs-csi
         accessMode: ReadWriteOnce
         size: 10Gi
