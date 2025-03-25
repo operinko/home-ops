@@ -44,7 +44,7 @@ nodes:
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/4b3cd373a192c8469e859b7a0cfbed3ecc3577c4a2d346a37b0aeff9cd17cdb0
-    controlPlane: true
+    controlPlane: false
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "bc:24:11:f1:40:59"
@@ -55,27 +55,6 @@ nodes:
           - network: "0.0.0.0/0"
             gateway: "192.168.7.1"
         mtu: 1500
-        vip:
-          ip: "192.168.7.2"
-  - hostname: "talos3"
-    ipAddress: "192.168.7.192"
-    installDisk: "/dev/sda"
-    machineSpec:
-      secureboot: false
-    talosImageURL: factory.talos.dev/installer/4b3cd373a192c8469e859b7a0cfbed3ecc3577c4a2d346a37b0aeff9cd17cdb0
-    controlPlane: true
-    networkInterfaces:
-      - deviceSelector:
-          hardwareAddr: "bc:24:11:bc:06:59"
-        dhcp: false
-        addresses:
-          - "192.168.7.192/24"
-        routes:
-          - network: "0.0.0.0/0"
-            gateway: "192.168.7.1"
-        mtu: 1500
-        vip:
-          ip: "192.168.7.2"
 
 # Global patches
 patches:
