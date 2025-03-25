@@ -60,6 +60,6 @@ spec:
       default: true
       nameSuffix: nvmf
       parameters:
-        repl: 2
+        repl: 1
     io_engine:
       cpuCount: 1
