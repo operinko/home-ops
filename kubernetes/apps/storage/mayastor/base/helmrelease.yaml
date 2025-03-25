@@ -38,6 +38,9 @@ spec:
   uninstall:
     keepHistory: false
   maxHistory: 3
+  dependsOn:
+    - name: csi-driver-nfs
+      namespace: storage
   values:
     localpv-provisioner:
       enabled: false
@@ -57,6 +60,6 @@ spec:
       default: true
       nameSuffix: nvmf
       parameters:
-        repl: 3
+        repl: 2
     io_engine:
       cpuCount: 1
