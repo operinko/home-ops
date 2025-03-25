@@ -24,7 +24,7 @@ spec:
   values:
     crds:
       create: true
-    replicaCount: 2
+    replicaCount: 1
     config:
       data:
         INHERITED_ANNOTATIONS: kyverno.io/ignore

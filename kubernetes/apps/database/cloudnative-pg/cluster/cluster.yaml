@@ -5,12 +5,12 @@ kind: Cluster
 metadata:
   name: postgres
 spec:
-  instances: 3
+  instances: 1
   imageName: ghcr.io/cloudnative-pg/postgresql:17.2
   primaryUpdateStrategy: unsupervised
   storage:
     size: 20Gi
-    storageClass: ceph-block
+    storageClass: nfs-csi
   superuserSecret:
     name: cloudnative-pg-secret
   enableSuperuserAccess: true
