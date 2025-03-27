@@ -16,3 +16,21 @@ metadata:
 spec:
   node: talos2
   disks: ["/dev/sdb"]
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: talos3-pool
+  namespace: storage
+spec:
+  node: talos3
+  disks: ["/dev/sdb"]
+---
+apiVersion: "openebs.io/v1beta2"
+kind: DiskPool
+metadata:
+  name: talos4-pool
+  namespace: storage
+spec:
+  node: talos4
+  disks: ["/dev/sdb"]

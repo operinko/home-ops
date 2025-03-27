@@ -29,7 +29,7 @@ spec:
       create: true
       name: nfs-csi
       parameters:
-        server: 192.168.0.177
+        server: 192.168.0.221
         share: /mnt/Nakkiallas/Nodepool
       mountOptions:
         - nfsvers=4.2
