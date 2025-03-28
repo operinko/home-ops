@@ -9,6 +9,7 @@ endpoint: https://192.168.7.2:6443
 additionalApiServerCertSans: &sans
   - "127.0.0.1"
   - "192.168.7.2"
+  - "talos.vaderrp.com"
 additionalMachineCertSans: *sans
 
 clusterPodNets: ["10.42.0.0/16"]
@@ -24,7 +25,7 @@ nodes:
     installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/3d045caf4505d55d9963b6b10a61e4b5a3250833d17085f4d0479e3d0221822d
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -32,6 +33,63 @@ nodes:
         dhcp: false
         addresses:
           - "192.168.7.187/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
+  - hostname: "talos2"
+    ipAddress: "192.168.7.192"
+    installDisk: "/dev/sda"
+    machineSpec:
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:f1:40:59"
+        dhcp: false
+        addresses:
+          - "192.168.7.192/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
+  - hostname: "talos3"
+    ipAddress: "192.168.7.182"
+    installDisk: "/dev/sda"
+    machineSpec:
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:bc:06:59"
+        dhcp: false
+        addresses:
+          - "192.168.7.182/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "192.168.7.1"
+        mtu: 1500
+        vip:
+          ip: "192.168.7.2"
+  - hostname: "talos4"
+    ipAddress: "192.168.7.20"
+    installDisk: "/dev/sda"
+    machineSpec:
+      secureboot: false
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:b0:17:db"
+        dhcp: false
+        addresses:
+          - "192.168.7.20/24"
         routes:
           - network: "0.0.0.0/0"
             gateway: "192.168.7.1"

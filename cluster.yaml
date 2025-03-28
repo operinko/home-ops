@@ -13,7 +13,7 @@ node_cidr: "192.168.7.0/24"
 
 # -- The default gateway for the nodes.
 #    (OPTIONAL) / (DEFAULT: the first IP in the node_cidr)
-node_default_gateway: "192.168.7.1"
+#node_default_gateway: "192.168.7.1"
 
 # -- Attach a vlan tag to the Talos nodes. Not needed if ports on your switch are tagged.
 #    (OPTIONAL) / (REF: https://www.talos.dev/latest/advanced/advanced-networking/#vlans)
@@ -25,7 +25,7 @@ cluster_api_addr: "192.168.7.2"
 
 # -- Additional SANs to add to the Kube API cert. This is useful if you want to call the Kube API by hostname rather than IP
 #    (OPTIONAL) / (e.g. ["mycluster.example.com"])
-# cluster_api_tls_sans: []
+cluster_api_tls_sans: ["talos.vaderrp.com"]
 
 # -- The pod CIDR for the cluster, this must NOT overlap with any existing networks and should be a /16 (64K IPs).
 #    (OPTIONAL) / (DEFAULT: "10.42.0.0/16")
@@ -49,11 +49,11 @@ repository_name: "operinko/home-ops"
 
 # -- GitHub repository branch
 #    (OPTIONAL) / (DEFAULT: "main")
-repository_branch: "main"
+# repository_branch: ""
 
 # -- Repository visibility (public or private)
 #    (OPTIONAL) / (DEFAULT: "public") / (NOTE: See the README for information when set private)
-repository_visibility: "private"
+# repository_visibility: ""
 
 # -- Domain you wish to use from your Cloudflare account
 #    (REQUIRED) / (e.g. "example.com")
@@ -73,7 +73,7 @@ cloudflare_ingress_addr: "192.168.7.5"
 
 # -- The IP address of the BGP router, to keep things simple, node network will be used for BGP peering.
 # (OPTIONAL) / (e.g. "192.168.1.1") / (REF: https://docs.cilium.io/en/latest/network/bgp-control-plane/bgp-control-plane/)
-#cilium_bgp_router_addr: "192.168.0.1"
+cilium_bgp_router_addr: "192.168.0.1"
 
 # -- The BGP router ASN
 # (OPTIONAL) / (e.g. "64513")
